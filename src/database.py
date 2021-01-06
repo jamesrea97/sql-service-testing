@@ -31,6 +31,7 @@ class Database:
                                     user=self._user,
                                     password=self._password,
                                     port=self._port)
+            conn.autocommit = True
         except:
             # TODO complete error handling
             logging.error('An error has occured')
@@ -49,7 +50,11 @@ class Database:
                 cursor = conn.cursor()
 
                 logging.info('Executing query')
-                cursor.execute(data, query)
+
+                if isinstance(data[0], list):
+                    cursor.executemany(query, data)
+                else:
+                    cursor.execute(query, data)
 
             except:
                 # TODO complete error handling
@@ -57,7 +62,7 @@ class Database:
             else:
                 logging.info('Successful upload of data...')
             finally:
-                conn.commit()
+                cursor.close()
                 conn.close()
 
 
