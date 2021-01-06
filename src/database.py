@@ -43,30 +43,24 @@ class Database:
 
     def insert(self, data, query):
         ''' Insert data to db '''
-        conn = self._connect()
+        if data:
+            conn = self._connect()
 
-        if conn:
-            try:
-                cursor = conn.cursor()
+            if conn:
+                try:
+                    cursor = conn.cursor()
 
-                logging.info('Executing query')
+                    logging.info('Executing query')
 
-                if isinstance(data[0], list):
-                    cursor.executemany(query, data)
+                    if isinstance(data[0], list):
+                        cursor.executemany(query, data)
+                    else:
+                        cursor.execute(query, data)
+
+                except:
+                    logging.error('An error has occured')
                 else:
-                    cursor.execute(query, data)
-
-            except:
-                # TODO complete error handling
-                logging.error('An error has occured')
-            else:
-                logging.info('Successful upload of data...')
-            finally:
-                cursor.close()
-                conn.close()
-
-
-if __name__ == "__main__":
-    d = Database()
-
-    d._connect()
+                    logging.info('Successful upload of data...')
+                finally:
+                    cursor.close()
+                    conn.close()
