@@ -1,7 +1,7 @@
 """ Module contains Transferer that drives the extraction of data from .cv and upload of data to db """
 import logging
-import src.extractor as extractor
-import src.database as database
+import extractor as extractor
+import database as database
 
 
 class Transferer:
