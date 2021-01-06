@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/jfgr/anaconda3/bin/python",
+    "python.pythonPath": "/home/jfgr/anaconda3/envs/sql-service/bin/python",
     "python.testing.unittestArgs": [
         "-v",
         "-s",
