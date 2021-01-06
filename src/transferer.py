@@ -1,7 +1,7 @@
 """ Module contains Transferer that drives the extraction of data from .cv and upload of data to db """
 import logging
-import extractor
-import database
+import src.extractor as extractor
+import src.database as database
 
 
 class Transferer:
@@ -20,7 +20,7 @@ class Transferer:
 
         logging.info('Inserting data into PostgreSQL db ...')
         try:
-            self.insert(data, db_query)
+            self.db.insert(data, db_query)
         except:
             logging.error('Successfully added to PostgreSQL db ...')
         else:

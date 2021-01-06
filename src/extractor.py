@@ -6,4 +6,11 @@ class Extractor:
     @classmethod
     def extract(cls, path):
         ''' Extracts data from .csv file '''
-    pass
+        result = []
+        with open(path, 'r') as data_file:
+
+            data = data_file.read().splitlines()
+
+            for line in data:
+                result.append(line.split(','))
+        return result
