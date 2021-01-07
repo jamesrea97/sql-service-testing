@@ -14,7 +14,7 @@ class ShouldInsertData(unittest.TestCase):
     def setUp(self):
         ''' Sets up data path '''
         self.db = database.Database()
-        with open('test/sql/insert_users.sql') as query_file:
+        with open('src/sql/insert_users.sql') as query_file:
             self.query = query_file.read().replace('\n', '')
 
     @patch('psycopg2.connect')

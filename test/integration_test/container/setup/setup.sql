@@ -7,5 +7,5 @@ CREATE TABLE sample_table (
 );
 
 COPY sample_table(name, surname, age, gender, nationality)
-FROM '/opt/data/sample.csv'
+FROM '/opt/data/integration-sample.csv'
 DELIMITER ',';

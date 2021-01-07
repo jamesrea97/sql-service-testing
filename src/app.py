@@ -3,7 +3,7 @@ import logger
 import transferer as transferer
 
 
-if __name__ == "__main__":
+def run(path):
     trans = transferer.Transferer()
 
     with open('test/sql/insert_users.sql') as query_file:
@@ -11,3 +11,7 @@ if __name__ == "__main__":
 
     if query:
         trans.transfer('test/data/sample.csv', query)
+
+
+if __name__ == "__main__":
+    pass

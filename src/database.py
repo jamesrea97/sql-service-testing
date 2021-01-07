@@ -8,7 +8,6 @@ class Database:
 
     def __init__(self):
         ''' Initializes fields for db connection '''
-        # TODO make this an env file
         self._database = os.environ['DATABASE']
         self._user = os.environ['USER']
         self._password = os.environ['PASSWORD']
