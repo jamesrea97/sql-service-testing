@@ -5,10 +5,11 @@ from unittest.mock import MagicMock
 from unittest.mock import patch
 
 import context
+import test_environment
 
-import src.extractor as extractor
-import src.transferer as transferer
-import src.database as database
+import extractor as extractor
+import transferer as transferer
+import database as database
 
 
 class ShouldTransferData(unittest.TestCase):
@@ -18,7 +19,7 @@ class ShouldTransferData(unittest.TestCase):
         self.data_path = 'path/to/data'
         self.sql_query = 'sql-query'
 
-    @patch('src.database.Database')
+    @patch('database.Database')
     def test_transfers_data_from_file_to_db(self, mock_db):
         ''' Passes test if data is transfered from file to db '''
 

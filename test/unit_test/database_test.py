@@ -3,9 +3,10 @@ import unittest
 from unittest.mock import patch
 
 import context
+import test_environment
 
 import os
-import src.database as database
+import database as database
 
 
 class ShouldInsertData(unittest.TestCase):

@@ -3,7 +3,9 @@
 import unittest
 
 import context
-import src.extractor as extractor
+import test_environment
+
+import extractor as extractor
 
 
 class ShouldExtractData(unittest.TestCase):
