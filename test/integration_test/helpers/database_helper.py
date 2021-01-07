@@ -14,6 +14,7 @@ class DatabaseHelper:
             conn = psycopg2.connect(host=os.environ['HOST'],
                                     database=os.environ['DATABASE'],
                                     user=os.environ['USER'],
+                                    password=os.environ['PASSWORD'],
                                     port=os.environ['PORT'])
             conn.autocommit = True
         except:
