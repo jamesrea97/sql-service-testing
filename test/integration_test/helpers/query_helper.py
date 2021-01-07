@@ -1,5 +1,6 @@
 """ Module contains QueryHelper, a helper for testing generating querys for testing DB behaviour """
 
+
 class QueryHelper:
 
     @classmethod
