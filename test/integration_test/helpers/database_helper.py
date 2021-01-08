@@ -31,12 +31,8 @@ class DatabaseHelper:
             try:
                 cursor = conn.cursor()
 
-                data = cursor.execute(query, field)
-                if isinstance(data[0], list):
-                    cursor.executemany(query, data)
-                else:
-                    cursor.execute(query, data)
-
+                cursor.execute(query, fields)
+                data = cursor.fetchall()
             except:
                 pass
             finally:

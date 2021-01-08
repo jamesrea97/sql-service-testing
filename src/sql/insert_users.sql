@@ -1,4 +1,4 @@
-INSERT INTO sample_table (
+INSERT INTO public.users (
     name,
     surname,
     age,
