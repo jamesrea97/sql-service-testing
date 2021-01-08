@@ -32,8 +32,7 @@ class Database:
                                     port=self._port)
             conn.autocommit = True
         except:
-            # TODO complete error handling
-            logging.error('An error has occured')
+            logging.error('An error has occured in connecting to the db...')
             pass
         else:
             logging.info('Successful connection...')
@@ -57,7 +56,9 @@ class Database:
                         cursor.execute(query, data)
 
                 except:
-                    logging.error('An error has occured')
+
+                    logging.error(
+                        'An error has occured in inserting the data in the db...')
                 else:
                     logging.info('Successful upload of data...')
                 finally:
