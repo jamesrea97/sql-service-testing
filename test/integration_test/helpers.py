@@ -1,11 +1,12 @@
-""" Module contains DatabaseHelper, a helper for testing behaviour against a DB """
+""" Module contains Helpers for Integration testin """
+
 
 import psycopg2
 import os
 
 
 class DatabaseHelper:
-
+    ''' Helps connect to DB '''
     @classmethod
     def _connect(cls):
         ''' Connects to PostgreSQL db '''
@@ -39,3 +40,26 @@ class DatabaseHelper:
                 cursor.close()
                 conn.close()
         return data
+
+
+class QueryHelper:
+    ''' Helps prepare query and compares results with PostgreSQL '''
+    @classmethod
+    def query_result_formatter(cls, data):
+        ''' Formats data in a readable manner for test '''
+        return [r[0].replace('(', '').replace(')', '').split(',') for r in data]
+
+    @classmethod
+    def query_builder(cls, path):
+        ''' Builds query from file '''
+        with open(path, 'r') as query_file:
+            return query_file.read()
+
+    @classmethod
+    def query_comparor(cls, query_before, query_after):
+        ''' Returns a list of elements present in query_after but not in query_before  '''
+        result = []
+        for entry in query_after:
+            if entry not in query_before:
+                result.append(entry)
+        return result

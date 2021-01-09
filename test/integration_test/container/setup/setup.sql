@@ -1,5 +1,5 @@
 
-CREATE TABLE sample_table (
+CREATE TABLE users (
     name varchar(50),
     surname varchar(50),
     age int,
@@ -7,6 +7,6 @@ CREATE TABLE sample_table (
     nationality varchar(20)
 );
 
-COPY sample_table(name, surname, age, gender, nationality)
+COPY users(name, surname, age, gender, nationality)
 FROM '/opt/data/integration-sample.csv'
 DELIMITER ',';

@@ -6,10 +6,8 @@ from dotenv import load_dotenv
 import context
 import os
 
+from helpers import QueryHelper, DatabaseHelper
 from app import run
-
-from helpers.database_helper import DatabaseHelper
-from helpers.query_helper import QueryHelper
 
 
 class ShouldIntegrateData(unittest.TestCase):

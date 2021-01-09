@@ -60,6 +60,7 @@ class Database:
                     logging.error(
                         'An error has occured in inserting the data in the db...')
                 else:
+                    print('Successful upload of data... ')
                     logging.info('Successful upload of data...')
                 finally:
                     cursor.close()
