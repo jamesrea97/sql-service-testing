@@ -25,8 +25,8 @@ class ShouldIntegrateData(unittest.TestCase):
         self.insert_path = 'src/sql/insert_users.sql'
 
         # TODO Fix docker container to run on localhost
-        # env_path = os.getcwd() + '/test/integration_test/.env'
-        # load_dotenv(dotenv_path=env_path, override=True)
+        env_path = os.getcwd() + '/test/integration_test/.env'
+        load_dotenv(dotenv_path=env_path, override=True)
 
     def test_can_extract_transfer_and_insert_data(self):
         ''' Passes test if data is extracted, transferd and inserted in database '''

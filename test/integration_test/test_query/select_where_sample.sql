@@ -4,7 +4,7 @@ SELECT (
     age ,
     gender,
     nationality 
-) FROM users
+) FROM sample_table
 WHERE 
     name=? AND 
     surname=?;

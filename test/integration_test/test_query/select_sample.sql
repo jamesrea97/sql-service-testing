@@ -4,4 +4,4 @@ SELECT (
     age ,
     gender,
     nationality 
-) FROM public.users;
+) FROM sample_table;
